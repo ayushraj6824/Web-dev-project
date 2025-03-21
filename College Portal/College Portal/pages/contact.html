@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- Navbar -->
+    <nav class="bg-blue-600 p-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <h1 class="text-white text-xl font-bold">UPES</h1>
+            <ul class="flex space-x-4">
+                <li><a href="../index.html" class="text-white">Home</a></li>
+                <li><a href="about.html" class="text-white">About</a></li>
+                <li><a href="contact.html" class="text-white">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="max-w-4xl mx-auto my-12 p-6 bg-white shadow-lg rounded-lg">
+        <h2 class="text-3xl font-bold mb-4">Contact Us</h2>
+        <form id="contactForm" class="space-y-6" onsubmit="return validateForm()">
+            <div>
+                <label for="name" class="block text-lg font-medium text-gray-700">Name</label>
+                <input type="text" id="name" name="name" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" required>
+            </div>
+            <div>
+                <label for="email" class="block text-lg font-medium text-gray-700">Email</label>
+                <input type="email" id="email" name="email" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" required>
+            </div>
+            <div>
+                <label for="phone" class="block text-lg font-medium text-gray-700">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" pattern="[0-9]{10}" required>
+                <small class="text-gray-600">Format: 1234567890</small>
+            </div>
+            <div>
+                <label for="message" class="block text-lg font-medium text-gray-700">Message</label>
+                <textarea id="message" name="message" rows="5" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" required></textarea>
+            </div>
+            <button type="submit" class="px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg">Send Message</button>
+        </form>
+    </section>
+
+    <script src="../js/contact.js"></script>
+</body>
+
+</html>

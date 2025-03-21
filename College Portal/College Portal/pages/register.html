@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- Navbar -->
+    <nav class="bg-blue-600 p-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <h1 class="text-white text-xl font-bold">UPES</h1>
+            <ul class="flex space-x-4">
+                <li><a href="../../index.html" class="text-white">Home</a></li>
+                <li><a href="about.html" class="text-white">About</a></li>
+                <li><a href="contact.html" class="text-white">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Registration Section -->
+    <section class="max-w-4xl mx-auto my-12 p-6 bg-white shadow-lg rounded-lg">
+        <h2 class="text-3xl font-bold mb-4">Event Registration</h2>
+        <form id="registrationForm" class="space-y-6" onsubmit="return validateForm()">
+            <div>
+                <label for="name" class="block text-lg font-medium text-gray-700">Name</label>
+                <input type="text" id="name" name="name" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" required>
+            </div>
+            <div>
+                <label for="email" class="block text-lg font-medium text-gray-700">Email</label>
+                <input type="email" id="email" name="email" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" required>
+            </div>
+            <div>
+                <label for="phone" class="block text-lg font-medium text-gray-700">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" pattern="[0-9]{10}" required>
+                <small class="text-gray-600">Format: 1234567890</small>
+            </div>
+            <div>
+                <label for="event" class="block text-lg font-medium text-gray-700">Select Event</label>
+                <div class="relative">
+                    <button type="button" onclick="toggleEventPopover()" class="mt-1 p-2 block w-full border border-gray-300 rounded-md">Select Event</button>
+                    <div id="eventPopover" class="absolute z-10 hidden bg-white shadow-lg rounded-lg w-full mt-1">
+                        <ul class="p-2">
+                            <li><button type="button" onclick="selectEvent('Event 1')" class="block w-full text-left px-4 py-2 hover:bg-gray-200">Event 1</button></li>
+                            <li><button type="button" onclick="selectEvent('Event 2')" class="block w-full text-left px-4 py-2 hover:bg-gray-200">Event 2</button></li>
+                            <li><button type="button" onclick="selectEvent('Event 3')" class="block w-full text-left px-4 py-2 hover:bg-gray-200">Event 3</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <input type="hidden" id="event" name="event" required>
+                <small id="eventSelected" class="text-gray-600"></small>
+            </div>
+            <button type="submit" class="px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg">Register</button>
+        </form>
+    </section>
+
+    <script>
+        function toggleEventPopover() {
+            document.getElementById('eventPopover').classList.toggle('hidden');
+        }
+
+        function selectEvent(eventName) {
+            document.getElementById('event').value = eventName;
+            document.getElementById('eventSelected').textContent = `Selected Event: ${eventName}`;
+            toggleEventPopover();
+        }
+
+        function validateForm() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const event = document.getElementById('event').value.trim();
+
+            if (!name || !email || !phone || !event) {
+                alert('Please fill out all required fields.');
+                return false;
+            }
+
+            // Additional validation can be added here
+
+            alert('Registration submitted successfully!');
+            // Optionally, reset the form
+            document.getElementById('registrationForm').reset();
+            document.getElementById('eventSelected').textContent = '';
+            return false; // Prevent form submission to the backend
+        }
+    </script>
+</body>
+
+</html>

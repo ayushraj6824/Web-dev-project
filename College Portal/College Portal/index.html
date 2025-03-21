@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- Navbar -->
+    <nav class="bg-blue-600 p-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <h1 class="text-white text-xl font-bold">UPES</h1>
+            <ul class="flex space-x-4">
+                <li><a href="#" class="text-white">Home</a></li>
+                <li><a href="./pages/about.html" class="text-white">About</a></li>
+                <li><a href="./pages/contact.html" class="text-white">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="text-center py-20 bg-blue-500 text-white">
+        <h2 class="text-4xl font-bold">Welcome to UPES</h2>
+        <p class="mt-2 text-lg">University of tomorrow</p>
+        <a href="./pages/register.html">
+            <button class="mt-4 px-6 py-2 bg-white text-blue-600 font-semibold rounded-lg">
+                register
+            </button>
+        </a>
+    </section>
+
+    <!-- Upcoming Events Section -->
+    <section class="max-w-4xl mx-auto my-12 p-6 bg-white shadow-lg rounded-lg">
+        <h3 class="text-2xl font-bold mb-4">Upcoming Events</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Upcoming Event 1 -->
+            <div class="bg-slate-200 p-4 rounded-lg">
+                <h3 class="text-lg font-bold">Event 1</h3>
+                <div>March 1st 2025</div>
+                <div id="countdown1" class="mt-2 text-center text-lg font-semibold"></div>
+            </div>
+            <!-- Upcoming Event 2 -->
+            <div class="bg-slate-200 p-4 rounded-lg">
+                <h3 class="text-lg font-bold">Event 2</h3>
+                <div>March 2nd 2025</div>
+                <div id="countdown2" class="mt-2 text-center text-lg font-semibold"></div>
+            </div>
+            <!-- Upcoming Event 3 -->
+            <div class="bg-slate-200 p-4 rounded-lg">
+                <h3 class="text-lg font-bold">Event 3</h3>
+                <div>March 3rd 2025</div>
+                <div id="countdown3" class="mt-2 text-center text-lg font-semibold"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Section -->
+    <section class="max-w-4xl mx-auto my-12 p-6 bg-white shadow-lg rounded-lg">
+        <h3 class="text-2xl font-bold mb-4">Events</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Event Card 1 -->
+            <a href="./pages/events/event1.html"
+                class="block bg-slate-200 p-4 rounded-lg hover:bg-slate-300 transition">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-lg font-bold">Event 1</h3>
+                    <div>March 1st 2025</div>
+                </div>
+                <p class="mt-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus, quasi.</p>
+            </a>
+            <!-- Event Card 2 -->
+            <a href="./pages/events/event2.html"
+                class="block bg-slate-200 p-4 rounded-lg hover:bg-slate-300 transition">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-lg font-bold">Event 2</h3>
+                    <div>March 2nd 2025</div>
+                </div>
+                <p class="mt-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus, laborum.</p>
+            </a>
+            <!-- Event Card 3 -->
+            <a href="./pages/events/event3.html"
+                class="block bg-slate-200 p-4 rounded-lg hover:bg-slate-300 transition">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-lg font-bold">Event 3</h3>
+                    <div>March 3rd 2025</div>
+                </div>
+                <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, error.</p>
+            </a>
+        </div>
+    </section>
+
+    <script src="./js/event.js"></script>
+</body>
+
+</html>
