@@ -15,7 +15,16 @@ import React, { useState } from 'react';
  */
 function App() {
   // State to manage the list of todos
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    // Retrieve todos from local storage if available, otherwise initialize as an empty array
+    const savedTodos = localStorage.getItem('todos');
+    return savedTodos ? JSON.parse(savedTodos) : [];
+  });
+
+  // Use useEffect to save todos to local storage whenever they change
+  React.useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
   
   // State to manage the input value
   const [inputValue, setInputValue] = useState('');
