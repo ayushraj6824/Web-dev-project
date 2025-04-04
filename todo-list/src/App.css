@@ -6,10 +6,41 @@
   background-color: purple; /* Added background color */
   color: white; /* Added text color */
 }
+.checkbox {
+  display: inline-block;
+  margin: 1rem;
+  cursor: pointer;
+}
 
+.checkbox input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+  color: #888; /* Optional: Change color to indicate completion */
+}
+
+.checkbox input[type="checkbox"] {
+  appearance: none;
+  width: 1.5em;
+  height: 1.5em;
+  border: 2px solid #fff;
+  border-radius: 0.25em;
+  background-color: transparent;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.checkbox input[type="checkbox"]:checked {
+  background-color: #61dafb;
+  border-color: #61dafb;
+}
+
+.checkbox label {
+  margin-left: 0.5em;
+  color: #fff;
+  font-size: 1rem;
+  vertical-align: middle;
+}
 .logo {
-  height: 6em;
-  padding: 1.5em;
+  height: 8em; /* Increased size to make it larger */
+  padding: 2em; /* Adjusted padding for larger size */
   will-change: filter;
   transition: filter 300ms;
   color: #f0f0f0; /* Changed text color to a light gray */
